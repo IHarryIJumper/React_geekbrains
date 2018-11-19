@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  background-color: lightskyblue;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  align-self: flex-end;
+  width: 100%;
+}
+
+header>a {
+  padding: 0 20px;
+}

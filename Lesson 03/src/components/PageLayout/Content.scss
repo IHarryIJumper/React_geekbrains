@@ -1,0 +1,12 @@
+main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  height: calc(100vh - 90px);
+  width: 100%;
+  align-items: center;
+}
+
+main > ul {
+  width: 80%;
+}
