@@ -1,13 +1,10 @@
-header {
+footer {
   display: flex;
-  background-color: lightskyblue;
+  background-color: rgb(55,55,55);
   justify-content: center;
   align-items: center;
   height: 45px;
   align-self: flex-end;
   width: 100%;
-}
-
-header>a {
-  padding: 0 20px;
+  color: white;
 }

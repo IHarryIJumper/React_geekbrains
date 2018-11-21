@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 
 import Menu, {SubMenu, MenuItem} from 'rc-menu';
-//import './Menu.css';
+import './ContextMenu.scss';
 
 class ContextMenu extends Component {
   render() {
     return (
-      <Menu>
+      <Menu className="context-menu">
         <MenuItem>Cats</MenuItem>
-        <SubMenu title="Lions">
-          <MenuItem></MenuItem>
-        </SubMenu>
+          <SubMenu title="Lions"></SubMenu>
         <MenuItem>Dogs</MenuItem>
       </Menu>
     );

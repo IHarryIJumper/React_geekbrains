@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import './Footer.css';
+import './Footer.scss';
 
 class Footer extends Component {
   render() {
-    return <footer>{`ReactJS lesson 03: ${new Date().getFullYear()}`}</footer>;
+    return <footer>{`React, lesson №3, ${new Date().getFullYear()} year ©`}</footer>;
   }
 }
 

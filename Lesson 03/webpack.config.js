@@ -1,6 +1,11 @@
 const path = require('path');
 
 module.exports = {
+    devServer: {
+        contentBase: path.join(__dirname, "src", "dist"),
+        port: 8080,
+        index: "index.html"
+      },
     mode: 'development',
     entry: path.join(__dirname, 'src', 'app.js'),
     output: {
