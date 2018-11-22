@@ -32,7 +32,8 @@ class Header extends Component {
           <button id="login-button" onClick={this.loginOnClick.bind(this)}>
             Login
           </button>
-          <SearchForm />
+
+          <SearchForm/> 
           <LoginForm show="false" />       
       </header>
     );
