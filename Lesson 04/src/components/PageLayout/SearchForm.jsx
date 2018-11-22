@@ -45,18 +45,17 @@ class SearchForm extends Component {
             });
             content = <ul>{items}</ul>
         } else {
-            if (this.state.filterValue.length === 0) {
-                content = '';
-            }
-            else {
-                content = <p>Нет совпадений</p>;
-            }
+            content = <p>Нет совпадений</p>;            
         }
+
+        const style = {
+            display: this.state.filterValue.length === 0 ? "none" : "block"
+          };   
 
         return (
             <div id="search-form">
                 <Filters updateFilter={this.handleFilterUpdate.bind(this)} />                
-                <div id="search-form-result">{content}</div>
+                <div id="search-form-result" style={style}>{content}</div>
             </div>
         )
     }

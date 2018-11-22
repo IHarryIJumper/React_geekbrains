@@ -2,10 +2,20 @@
   margin-left: 20px;
   width: 200px;
 
+  input{
+    width: 100%;
+  }
+
+  ul li{
+    display: block;
+  }
   #search-form-result{
-    background-color: white;
-    width: 190px;
+    background-color: white;       
     position: absolute;
-    margin: 5px
+    width: 200px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    padding: 10px 10px 10px 20px;
+    border: 1px solid black;
   }
 }
