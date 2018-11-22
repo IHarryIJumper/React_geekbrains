@@ -1,0 +1,16 @@
+
+
+ul.context-menu{
+  width: max-content;
+  font-size: 1.5em;
+
+  li{
+    list-style-type: none;
+    cursor: pointer;
+    margin: 10px 0;
+    
+  }
+  li:hover{
+    text-decoration: underline;
+  }
+}
