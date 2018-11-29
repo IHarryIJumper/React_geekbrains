@@ -1,0 +1,16 @@
+.comment{
+  padding: 10px 10px 10px 30px;   
+  margin: 10px 10px 10px 30px; 
+  background-color: white;
+
+  .comment-user{
+    font-weight: bold;
+    text-indent: 5px;
+  }
+
+  .comment-text{
+    text-indent: 5px;
+    font-style: italic;
+  }
+}
+  

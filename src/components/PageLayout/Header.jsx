@@ -4,50 +4,35 @@ import "./Header.scss";
 import LoginForm from "./LoginForm.jsx";
 import SearchForm from "./SearchForm.jsx";
 
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
 
-
   constructor(props) {
     super(props);
-    
-    /*this.state = {
-      showLoginFormValue: false
-    }
-
-    console.log(this.props);*/
   }
 
-  linkClick = (index) => {
-    this.props.changePage(index);
-  }
-
-  showLoginForm = () => {
-    console.log(this.props);
+  showLoginForm = () => {    
     this.props.showLoginForm();
   }
 
   hideLoginForm = () => {
-    this.props.hideLoginForm();   
+    this.props.hideLoginForm();
   }
 
-  setUserName = (userName) => {     
-    this.props.setUserName(userName);    
+  setUserName = (userName) => {
+    this.props.setUserName(userName);
   }
 
   render() {
-   // console.log("render", this.props.showLoginForm);
-
     const showLoginFormValue = this.props.showLoginFormValue;
-   
-    let links = this.props.links;
+    const pageRouter = this.props.pageRouter;
+
     return (
       <header className="some-class">
-        <ul>
-          {links.map((link, linkIndex) => {
-            return <li key={`nav-link-${linkIndex}`} onClick={() => this.linkClick(linkIndex)}><a >{link}</a></li>;
-          })}
-        </ul>
+        {pageRouter.map((route, index) => {
+          return <li key={`nav-link-${index}`}><Link to={route.path}>{route.title}</Link></li>;
+        })}
 
         <button id="login-button" onClick={this.showLoginForm}>
           Login

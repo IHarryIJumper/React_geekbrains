@@ -4,17 +4,13 @@ import './LoginForm.scss';
 class LoginForm extends Component {
 
   constructor(props) {
-    super(props);   
-    /*this.state = {
-      showLoginFormValue: JSON.parse(this.props.showLoginFormValue)
-    }  */
+    super(props); 
   }
 
 
   setUserName = (e) =>{
     e.preventDefault();    
-    const userName = document.querySelector("#user-name_input").value;   
-    console.log(this.props);
+    const userName = document.querySelector("#user-name_input").value;      
     this.props.setUserName(userName);
   }
 

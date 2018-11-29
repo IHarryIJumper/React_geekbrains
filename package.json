@@ -1,5 +1,5 @@
 {
-  "name": "lesson-05",
+  "name": "lesson-06",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,9 @@
     "jsonfile": "^5.0.0",
     "rc-menu": "^7.4.19",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",

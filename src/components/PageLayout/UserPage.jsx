@@ -4,7 +4,7 @@ import React, { Component } from "react";
 
 class UserPage extends Component {
   render() {  
-    return <main id="userPage"></main>;
+    return <main id="userPage">users list</main>;
   }
 }
 
