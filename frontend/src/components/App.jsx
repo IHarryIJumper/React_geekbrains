@@ -6,8 +6,8 @@ import Header from "./PageLayout/Header.jsx";
 
 import HomePage from "./PageLayout/HomePage.jsx";
 import BlogPage from "./PageLayout/BlogPage.jsx";
-import CommentPage from "./PageLayout/CommentPage.jsx";
-import Comment from "./PageLayout/Comment.jsx";
+import {CommentsPage} from "./PageLayout/CommentsPage.jsx";
+import SoloCommentPage from "./PageLayout/SoloCommentPage.jsx";
 import UserPage from "./PageLayout/UserPage.jsx";
 
 import { Switch, Route, Router, Link } from 'react-router';
@@ -48,7 +48,7 @@ class App extends Component {
     const PAGE_ROUTER = [
       { title: "Главная", path: '/', exact: true, render: () => <HomePage /> },
       { title: "Блог", path: '/blog', exact: false, render: () => <BlogPage/>},
-      { title: "Комментарии", path: '/comments', exact: true, render: () => <CommentPage userName={this.state.userName} setUserName={this.setUserName}/> },    
+      { title: "Комментарии", path: '/comments', exact: true, render: () => <CommentsPage userName={this.state.userName} setUserName={this.setUserName}/> },    
       { title: "Пользователи", path: '/users', exact: false, render: () => <UserPage/>},
     ]
     
@@ -60,15 +60,14 @@ class App extends Component {
           showLoginForm={this.showLoginForm}
           hideLoginForm={this.hideLoginForm}
           pageRouter={PAGE_ROUTER}
-        />     
-        <Switch>
-          {PAGE_ROUTER.map((pageroute, index) => {
-              return (<Route key={index} exact={pageroute.exact} path={pageroute.path} render={pageroute.render} />);
-            })}
-          <Route path='/comments/:id' component={Comment} />
-        </Switch>
-
-        <Footer />
+        />
+          <Switch>
+            {PAGE_ROUTER.map((pageroute, index) => {
+                return (<Route key={index} exact={pageroute.exact} path={pageroute.path} render={pageroute.render} />);
+              })}
+            <Route path='/comments/:id' component={SoloCommentPage} />
+          </Switch>
+        <Footer lessonNumber={8}/>
       </div>
     );
   }
