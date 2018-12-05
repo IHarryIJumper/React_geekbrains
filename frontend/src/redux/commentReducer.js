@@ -4,17 +4,17 @@
 // Определяем уникальные имена для вызываемых экшенов
 // неободимо следить чтобы имена экшенов (экшен типы) не повторялись
 
-const GET_COMMENTS = "app/comments/GET_COMMENTS";
-const GET_COMMENTS_SUCCESS = "app/comments/GET_COMMENTS_SUCCESS";
-const GET_COMMENTS_FAIL = "app/comments/GET_COMMENTS_FAIL";
+export const GET_COMMENTS = "app/comments/GET_COMMENTS";
+export const GET_COMMENTS_SUCCESS = "app/comments/GET_COMMENTS_SUCCESS";
+export const GET_COMMENTS_FAIL = "app/comments/GET_COMMENTS_FAIL";
 
-const ADD_COMMENT = "app/comments/ADD_COMMENT";
-const ADD_COMMENT_SUCCESS = "app/comments/ADD_COMMENT_SUCCESS";
-const ADD_COMMENT_FAIL = "app/comments/ADD_COMMENT_FAIL";
+export const ADD_COMMENT = "app/comments/ADD_COMMENT";
+export const ADD_COMMENT_SUCCESS = "app/comments/ADD_COMMENT_SUCCESS";
+export const ADD_COMMENT_FAIL = "app/comments/ADD_COMMENT_FAIL";
 
-const DELETE_COMMENT = "app/comments/DELETE_COMMENT";
-const DELETE_COMMENT_SUCCESS = "app/comments/DELETE_COMMENT_SUCCESS";
-const DELETE_COMMENT_FAIL = "app/comments/DELETE_COMMENT_FAIL";
+export const DELETE_COMMENT = "app/comments/DELETE_COMMENT";
+export const DELETE_COMMENT_SUCCESS = "app/comments/DELETE_COMMENT_SUCCESS";
+export const DELETE_COMMENT_FAIL = "app/comments/DELETE_COMMENT_FAIL";
 
 const initialState = {
     list: [],
@@ -52,7 +52,8 @@ const commentReducer = (state = initialState, action = {}) => {
             return state;
     }    
 }
-module.exports = commentReducer;
+
+export default commentReducer;
 
 
 // REDUCER

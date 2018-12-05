@@ -6,7 +6,7 @@ import Header from "./PageLayout/Header.jsx";
 
 import HomePage from "./PageLayout/HomePage.jsx";
 import BlogPage from "./PageLayout/BlogPage.jsx";
-import {CommentsPage} from "./PageLayout/CommentsPage.jsx";
+import CommentsPage from "./PageLayout/CommentsPage.jsx";
 import SoloCommentPage from "./PageLayout/SoloCommentPage.jsx";
 import UserPage from "./PageLayout/UserPage.jsx";
 

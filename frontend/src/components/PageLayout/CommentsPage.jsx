@@ -4,19 +4,20 @@ import React, { Component } from "react";
 //import actions from "../../redux/actions.js"
 import "./CommentsPage.scss";
 
-
 // импортируем функцию коннекта компоненты с хранилищем
 // необходимо помнить, что не нужно подключать абсолютно все компоненты к редаксу
 // в глупых компонентах отвечающих только для простой рендер лучше избежать его подключения
 import { connect } from "react-redux";
 
 // Импортируются необходимые экшены и селекторы из редьюсера
+import getComments from "../../redux/actions.js";
 import {
-  getComments
-} from "../../redux/actions.js";
+  getCommentsList,
+  getCommentsLoading
+} from "../../redux/temp/modules/comments.js";
 
 import SoloCommentPage from "./SoloCommentPage.jsx";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class CommentsPage extends Component {
   constructor(props) {
@@ -34,32 +35,37 @@ class CommentsPage extends Component {
 
   addComment = () => {
     //
-  }
+  };
 
   renderComments = () => {
     const { commentsData } = this.state;
-    //sessionStorage.setItem("user-comments",[]);    
+    //sessionStorage.setItem("user-comments",[]);
     return commentsData.map(comment => (
       <li key={`comment-route-${comment.id}`}>
-        <Link to={`/comments/${comment.id}`} >
-          <SoloCommentPage id={comment.id} userName={comment.userName} text={comment.text} />
+        <Link to={`/comments/${comment.id}`}>
+          <SoloCommentPage
+            id={comment.id}
+            userName={comment.userName}
+            text={comment.text}
+          />
         </Link>
       </li>
-    ))
-  }//#renderComments  
+    ));
+  }; //#renderComments
 
   render() {
     return (
       <main id="commentPage">
-        <ul id="comment-list">
-          {this.renderComments()}
-        </ul>
+        <ul id="comment-list">{this.renderComments()}</ul>
 
         <div id="comment-add">
-          <input id="comment_input" /><button id="add-comment_button" onClick={this.addComment}>Add comment</button>
+          <input id="comment_input" />
+          <button id="add-comment_button" onClick={this.addComment}>
+            Add comment
+          </button>
         </div>
-
-      </main>);
+      </main>
+    );
   }
 }
 
@@ -67,7 +73,7 @@ class CommentsPage extends Component {
 // принимает два аргумента state и ownProps
 // в state приходит все данные из хранилища redux
 // в ownProps можно получить собственные пропы компоненты
-// в некоторых случаях их необходимо сравнить или 
+// в некоторых случаях их необходимо сравнить или
 // обработать чтобы получить небходимый параметр
 // Возвращает объект и вызывается каждый раз при обновлении хранилища
 const mapStateToProps = (state, ownProps) => {
@@ -83,7 +89,7 @@ const mapStateToProps = (state, ownProps) => {
 // В случае если это функция, то первым аргументом мы получаем функцию dispatch
 // в этом случае мы можем прикрепить ее через bindActionCreator из пакета redux
 // к нашим экшенам. На выходы должен возвращать объект.
-// В данном случае это просто объект и redux сам передает в каждый из экшенов dispatch 
+// В данном случае это просто объект и redux сам передает в каждый из экшенов dispatch
 const mapDispatchToProps = {
   handleCommentsFetch: getComments,
   getComments
@@ -94,7 +100,10 @@ const mapDispatchToProps = {
 // вторым mapDispatchToProps
 // Возвращает функцию в которую мы передаем нашу компоненту во вторых скобках
 //module.exports = connect(mapStateToProps, mapDispatchToProps)(CommentsPage);
-export default connect(mapStateToProps, mapDispatchToProps)(CommentsPage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CommentsPage);
 
 /*
 import React, { PureComponent } from "react";

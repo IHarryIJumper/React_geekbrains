@@ -1,5 +1,5 @@
 // фейковое API для эмуляции реквестов
-import commentsAPI from "../../api/commentAPI.js";
+// import commentsAPI from "../../api/commentAPI.js";
 
 // ACTION TYPES
 // Определяем уникальные имена для вызываемых экшенов
@@ -80,7 +80,7 @@ const reducer = (state = initialState, action = {}) => {
 // Набор селекторов, позволяющих упросить выборку определенных данных из хранилища
 
 export const getLocalState = state => {
-  return state.comments;
+  return state.commentReducer;
 };
 
 export const getCommentsList = state => {
